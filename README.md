@@ -12,17 +12,17 @@ Além disso, o Bubble Sort ensina princípios básicos que são fundamentais par
 
 Apesar de não ser o algoritmo mais rápido para grandes conjuntos de dados, o Bubble Sort é eficiente o suficiente para pequenas listas e ideal para fins educacionais. Ele oferece uma base sólida para entender os fundamentos da ordenação antes de avançar para métodos mais eficientes e sofisticados.
 
-Funcionamento Básico
+# Funcionamento Básico
 
 O funcionamento do Bubble Sort é baseado na comparação dos elementos da lista e na troca de posição dos mesmos quando necessário para atingir a ordenação pretendida. Ele atua localmente, ou seja, pode alterar a própria lista de entrada.
 Passo a Passo do Algoritmo
 
-    Percorra a lista da esquerda para a direita.
-    Compare cada elemento com o elemento adjacente à sua direita.
-    Se o elemento à esquerda for maior que o elemento à direita, troque-os de posição.
-    Repita os passos 1 a 3 até que a lista esteja ordenada.
+    1. Percorra a lista da esquerda para a direita.
+    2. Compare cada elemento com o elemento adjacente à sua direita.
+    3. Se o elemento à esquerda for maior que o elemento à direita, troque-os de posição.
+    4. Repita os passos 1 a 3 até que a lista esteja ordenada.
 
-Exemplo Sem Código
+*Exemplo Sem Código.
 
 Imagine que você tem uma lista de números: [5, 3, 8, 4, 2].
 
@@ -50,4 +50,4 @@ Imagine que você tem uma lista de números: [5, 3, 8, 4, 2].
         Compare 4 e 5. Não troque.
         Compare 5 e 8. Não troque.
 
-A lista agora está ordenada: [2, 3, 4, 5, 8].
+*A lista agora está ordenada: [2, 3, 4, 5, 8].
