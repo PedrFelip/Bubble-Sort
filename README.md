@@ -22,7 +22,7 @@ Passo a Passo do Algoritmo
     3. Se o elemento à esquerda for maior que o elemento à direita, troque-os de posição.
     4. Repita os passos 1 a 3 até que a lista esteja ordenada.
 
-*Exemplo Sem Código.
+*Exemplo Sem Código.*
 
 Imagine que você tem uma lista de números: [5, 3, 8, 4, 2].
 
@@ -50,4 +50,4 @@ Imagine que você tem uma lista de números: [5, 3, 8, 4, 2].
         Compare 4 e 5. Não troque.
         Compare 5 e 8. Não troque.
 
-*A lista agora está ordenada: [2, 3, 4, 5, 8].
+*A lista agora está ordenada: [2, 3, 4, 5, 8].*
