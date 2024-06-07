@@ -51,3 +51,14 @@ Imagine que você tem uma lista de números: [5, 3, 8, 4, 2].
         Compare 5 e 8. Não troque.
 
 *A lista agora está ordenada: [2, 3, 4, 5, 8].*
+
+# Agora Como fazer em Qualquer linguagem de Programação
+
+*Para modos de aprendizado vamos usar C*
+
+Para começar, vamos incluir as bibliotecas #include <stdio.h> e #include <stdbool.h>. A biblioteca stdbool.h em C é responsável por fornecer suporte para o tipo booleano e seus valores true e false.
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+```
