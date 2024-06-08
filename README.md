@@ -56,13 +56,13 @@ Imagine que você tem uma lista de números: [5, 3, 8, 4, 2].
 
 *Para modos de aprendizado vamos usar C*
 
-Para começar, vamos incluir as bibliotecas #include <stdio.h> e #include <stdbool.h>. A biblioteca stdbool.h em C é responsável por fornecer suporte para o tipo booleano e seus valores true e false.
+Para começar, vamos incluir as bibliotecas `#include <stdio.h>` e `#include <stdbool.h>`. A biblioteca `stdbool.h` em C é responsável por fornecer suporte para o tipo booleano e seus valores true e false.
 
 ```c
 #include <stdio.h>
 #include <stdbool.h>
 ```
-Agora, vamos focar no principal objetivo, que é trocar os valores de duas variáveis, a e b, invertendo-os. Para isso, criaremos uma função chamada troca que realizará essa inversão.
+Agora, vamos focar no principal objetivo, que é trocar os valores de duas variáveis, `a` e `b`, invertendo-os. Para isso, criaremos uma função chamada `troca` que realizará essa inversão.
 
 ```c
 void troca(int* a, int* b){
@@ -72,7 +72,7 @@ void troca(int* a, int* b){
 }
 ```
 
-A função troca é usada para trocar os valores de duas variáveis inteiras. Primeiro, ela armazena o valor da variável apontada por a em uma variável temporária chamada temp. Em seguida, ela atribui o valor da variável apontada por b à variável apontada por a, efetivamente copiando o valor de b para a. Finalmente, a função atribui o valor armazenado em temp à variável apontada por b, completando a troca dos valores. Assim, após a execução da função, os valores das duas variáveis são trocados entre si.
+A função `troca` é usada para trocar os valores de duas variáveis inteiras. Primeiro, ela armazena o valor da variável apontada por a em uma variável temporária chamada `temp`. Em seguida, ela atribui o valor da variável apontada por `b` à variável apontada por a, efetivamente copiando o valor de `b` para `a`. Finalmente, a função atribui o valor armazenado em `temp` à variável apontada por `b`, completando a troca dos valores. Assim, após a execução da função, os valores das duas variáveis são trocados entre si.
 
 
 #Bubble Sort!!
@@ -115,5 +115,36 @@ Durante cada iteração desse segundo loop, ele compara o elemento atual (`arr[j
 A variável `snap` é uma flag booleana que indica se houve alguma troca de elementos durante a passagem atual pelo array. Ela é inicializada como `false` antes de cada passagem pelo array. Se ocorrer uma troca de elementos durante o segundo loop, a flag `snap` é alterada para `true`, indicando que pelo menos uma troca ocorreu durante a passagem.
 
 A função da variável `snap` é importante para otimizar o algoritmo. Se durante uma passagem completa pelo array nenhuma troca ocorrer (ou seja, `snap` permanecer `false`), isso significa que o array já está ordenado e não há necessidade de continuar as iterações. Nesse caso, o primeiro loop (externo) é interrompido usando a instrução `break`, economizando tempo de processamento.
+
+
+```c
+void printArray(int arr[], int size){
+    int i;
+    for(i = 0; i < size; i++){
+        printf("%d ", arr[i]);
+    }
+}
+
+int main(){
+    int arr[] = { 23, 34, 15, 80, 12, 11, 49 };
+    int tamanhoarr = sizeof(arr) / sizeof(arr[0]);
+    
+    bubbleSort(arr, tamanhoarr);
+    
+    printf("Bubble array: \n");
+    printArray(arr, tamanhoarr);
+    
+    return 0;
+}
+```
+Neste trecho de código, a função `printArray` é definida para imprimir os elementos de um array, e a função `main` é usada para definir um array de inteiros, ordená-lo usando a função `bubbleSort`, e, em seguida, imprimir o array ordenado.
+
+A função `printArray` recebe dois parâmetros: o array `arr` e o tamanho `size` do array. Dentro da função, um loop `for` é utilizado para iterar sobre todos os elementos do array e imprimi-los na tela, separados por um espaço.
+
+Na função `main`, um array `arr` é definido com uma lista de números desordenados. O tamanho do array é calculado dividindo o tamanho total do array em bytes pelo tamanho de um único elemento do array, utilizando a expressão `sizeof(arr) / sizeof(arr[0])`.
+
+Em seguida, a função `bubbleSort` é chamada para ordenar o array `arr` em ordem crescente. Depois disso, é impresso na tela "Bubble array:" seguido dos elementos do array já ordenados, utilizando a função `printArray`.
+
+Finalmente, a função `main` retorna `0`, indicando que o programa foi executado com sucesso.
 
 
