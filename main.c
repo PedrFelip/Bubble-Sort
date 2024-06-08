@@ -16,8 +16,12 @@ void bubble( int arr[], tamanhoarr){
         snap = false;
         for(j = 0; j < tamanhoarr - i - 1; j++){
             if (arr[j] > arr[j + 1]){
-                troca(arr[j], arr[j + 1])
+                troca(arr[j], arr[j + 1]);
+                snap = true;
             }
+        }
+        if (snap == false){
+            break;
         }
         
     }
