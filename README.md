@@ -62,3 +62,6 @@ Para começar, vamos incluir as bibliotecas #include <stdio.h> e #include <stdbo
 #include <stdio.h>
 #include <stdbool.h>
 ```
+
+Agora vamos fazer o principal que é a troca de valores pegar o valor a e b inverdendo eles, Pra isso vamos fazer uma função void para essa troca
+vamos chama-la de 'troca'
