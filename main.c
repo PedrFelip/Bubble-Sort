@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -13,7 +14,11 @@ void bubble( int arr[], tamanhoarr){
     
     for(i = 0; i < tamanhoarr - 1; i++){
         snap = false;
-        
+        for(j = 0; j < tamanhoarr - i - 1; j++){
+            if (arr[j] > arr[j + 1]){
+                troca(arr[j], arr[j + 1])
+            }
+        }
         
     }
     
