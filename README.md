@@ -62,6 +62,58 @@ Para começar, vamos incluir as bibliotecas #include <stdio.h> e #include <stdbo
 #include <stdio.h>
 #include <stdbool.h>
 ```
+Agora, vamos focar no principal objetivo, que é trocar os valores de duas variáveis, a e b, invertendo-os. Para isso, criaremos uma função chamada troca que realizará essa inversão.
 
-Agora vamos fazer o principal que é a troca de valores pegar o valor a e b inverdendo eles, Pra isso vamos fazer uma função void para essa troca
-vamos chama-la de 'troca'
+```c
+void troca(int* a, int* b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+```
+
+A função troca é usada para trocar os valores de duas variáveis inteiras. Primeiro, ela armazena o valor da variável apontada por a em uma variável temporária chamada temp. Em seguida, ela atribui o valor da variável apontada por b à variável apontada por a, efetivamente copiando o valor de b para a. Finalmente, a função atribui o valor armazenado em temp à variável apontada por b, completando a troca dos valores. Assim, após a execução da função, os valores das duas variáveis são trocados entre si.
+
+
+#Bubble Sort!!
+
+Agora o Motivo de todo esse repositorio que é a função bubble que vai comparar os numeros da lista array e organizalos
+```c
+void bubbleSort( int arr[], int tamanhoarr){
+    int i, j;
+    bool snap;
+```
+A função `bubbleSort` Ela recebe dois parâmetros: `arr`, que é o array a ser ordenado, e `tamanhoarr`, que é o número de elementos no array. Dentro da função, duas variáveis de controle, `i` e `j`,sempre usadas para controle de laços e arrays seram usados para iterar através dos elementos do array. Uma flag booleana chamada `snap` é utilizada para monitorar se houve alguma troca de elementos durante cada passagem pelo array.
+
+```c
+for(i = 0; i < tamanhoarr - 1; i++){
+        snap = false;
+        for(j = 0; j < tamanhoarr - i - 1; j++){
+            if (arr[j] > arr[j + 1]){
+                troca(&arr[j], &arr[j + 1]);
+                snap = true;
+            }
+        }
+        if (snap == false){
+            break;
+        }
+    }
+```
+O primeiro laço, identificado pela variável de controle i, percorre o array de números várias vezes. Ele é responsável por controlar o número de iterações necessárias para garantir que todos os elementos estejam na posição correta.
+
+O loop começa com i igual a 0 e continua até que i seja menor do que tamanhoarr - 1, onde tamanhoarr é o número total de elementos no array. A condição i < tamanhoarr - 1 é usada porque, após cada iteração, o maior elemento já estará na posição correta no final do array, então não é necessário continuar até o final.
+
+*Assim deixando que o Segundo laço faça a troca de valores com a nossa função 'troca'.*
+O segundo laço, controlado pela variável de iteração `j`, percorre o array durante cada passagem realizada pelo primeiro laço. Sua função principal é comparar elementos adjacentes e realizar a troca de posição se necessário.
+
+A variável `j` é inicializada com 0 e o loop continua até que `j` seja menor do que `tamanhoarr - i - 1`. Aqui está o significado de cada parte dessa condição:
+
+- `tamanhoarr - i - 1`: Isso garante que o loop interno não percorra elementos que já foram ordenados no final do array. A subtração de `i` é importante porque, após cada passagem completa do loop externo, o maior elemento já estará na sua posição correta no final do array, então não há necessidade de compará-lo novamente.
+
+Durante cada iteração desse segundo loop, ele compara o elemento atual (`arr[j]`) com o próximo elemento (`arr[j + 1]`). Se o elemento atual for maior do que o próximo, significa que eles estão fora de ordem, então ocorre a troca de posição entre eles.
+
+A variável `snap` é uma flag booleana que indica se houve alguma troca de elementos durante a passagem atual pelo array. Ela é inicializada como `false` antes de cada passagem pelo array. Se ocorrer uma troca de elementos durante o segundo loop, a flag `snap` é alterada para `true`, indicando que pelo menos uma troca ocorreu durante a passagem.
+
+A função da variável `snap` é importante para otimizar o algoritmo. Se durante uma passagem completa pelo array nenhuma troca ocorrer (ou seja, `snap` permanecer `false`), isso significa que o array já está ordenado e não há necessidade de continuar as iterações. Nesse caso, o primeiro loop (externo) é interrompido usando a instrução `break`, economizando tempo de processamento.
+
+
